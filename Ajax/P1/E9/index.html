@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax con Logo de Espera</title>
+    <script src="js/script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #loading {
+            display: none;
+            margin: 20px auto;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Esperar Datos con Ajax</h1>
+    <button id="cargarDatos">Cargar Datos</button>
+    <div id="loading">
+        <img src="loading.gif" alt="Cargando...">
+        <p>Cargando datos, por favor espera...</p>
+    </div>
+    <div id="resultado">
+        <!-- Aquí se mostrarán los datos devueltos por PHP -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo con Ajax y PHP</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h1>Ejemplo de Ajax con PHP</h1>
+
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="respuesta"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#formulario").submit(function(event) {
+                event.preventDefault(); // Prevenir el envío tradicional del formulario
+
+                // Obtener los valores del formulario
+                var nombre = $("#nombre").val();
+                var edad = $("#edad").val();
+
+                // Enviar datos al archivo PHP utilizando Ajax
+                $.ajax({
+                    url: 'procesar.php', // El archivo PHP que procesará los datos
+                    type: 'GET',
+                    data: {nombre: nombre, edad: edad}, // Parámetros GET
+                    success: function(response) {
+                        // Mostrar la respuesta del servidor
+                        $("#respuesta").html(response);
+                    },
+                    error: function() {
+                        alert("Hubo un error en la solicitud.");
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <item>
+        <title>Artículo 1</title>
+        <description>Descripción del artículo 1. Este es un ejemplo de cómo mostrar contenido XML.</description>
+    </item>
+    <item>
+        <title>Artículo 2</title>
+        <description>Descripción del artículo 2. Aquí se muestra otro ejemplo de contenido XML.</description>
+    </item>
+    <item>
+        <title>Artículo 3</title>
+        <description>Descripción del artículo 3. Este es el último ejemplo de contenido en este archivo XML.</description>
+    </item>
+</items>
