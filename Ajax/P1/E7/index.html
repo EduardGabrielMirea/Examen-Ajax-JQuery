@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo con Ajax y PHP</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
 
@@ -21,32 +22,6 @@
     </form>
 
     <div id="respuesta"></div>
-
-    <script>
-        $(document).ready(function() {
-            $("#formulario").submit(function(event) {
-                event.preventDefault(); // Prevenir el envío tradicional del formulario
-
-                // Obtener los valores del formulario
-                var nombre = $("#nombre").val();
-                var edad = $("#edad").val();
-
-                // Enviar datos al archivo PHP utilizando Ajax
-                $.ajax({
-                    url: 'procesar.php', // El archivo PHP que procesará los datos
-                    type: 'GET',
-                    data: {nombre: nombre, edad: edad}, // Parámetros GET
-                    success: function(response) {
-                        // Mostrar la respuesta del servidor
-                        $("#respuesta").html(response);
-                    },
-                    error: function() {
-                        alert("Hubo un error en la solicitud.");
-                    }
-                });
-            });
-        });
-    </script>
 
 </body>
 </html>
